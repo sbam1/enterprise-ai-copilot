@@ -1,0 +1,21 @@
+# Python virtual environment
+.venv/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Environment variables / secrets
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/

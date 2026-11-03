@@ -1,0 +1,11 @@
+[project]
+name = "enterprise-ai-copilot"
+version = "0.1.0"
+description = "Production-oriented AI engineering copilot."
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<9",
+]
