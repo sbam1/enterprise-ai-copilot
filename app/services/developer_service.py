@@ -1,21 +1,14 @@
-from dataclasses import dataclass
-
-
-@dataclass
-class Developer:
-    name: str
-    experience_years: int
-    skills: list[str] | None = None
+from app.models.developer import Developer
 
 
 def get_active_skills(skills: list[str]) -> list[str]:
-    active_skills = []
+    if not isinstance(skills, list):
+        raise TypeError("Skills must be a list")
 
-    for skill in skills:
-        if skill != "COBOL":
-            active_skills.append(skill)
+    if not all(isinstance(skill, str) for skill in skills):
+        raise TypeError("Every skill must be a string")
 
-    return active_skills
+    return [skill for skill in skills if skill != "COBOL"]
 
 
 def display_developer_info(developer: Developer) -> None:

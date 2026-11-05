@@ -1,27 +1,13 @@
+from app.main import main
 
 
-from app.developer import get_active_skills
+def test_main(capsys):
+    main()
 
+    captured = capsys.readouterr()
 
-def test_get_active_skills_removes_cobol() -> None:
-    skills = ["Java", "COBOL", "Python"]
-
-    result = get_active_skills(skills)
-
-    assert result == ["Java", "Python"]
-
-
-def test_get_active_skills_with_no_cobol() -> None:
-    skills = ["Java", "Python", "AWS"]
-
-    result = get_active_skills(skills)
-
-    assert result == ["Java", "Python", "AWS"]
-
-
-def test_get_active_skills_with_empty_list() -> None:
-    skills = []
-
-    result = get_active_skills(skills)
-
-    assert result == []
+    assert "Developer Name: Suseel" in captured.out
+    assert "Experience Years: 13" in captured.out
+    assert "Java, Spring Boot, AWS" in captured.out
+    assert "COBOL" not in captured.out
+    assert "Skills: Not provided" in captured.out
