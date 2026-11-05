@@ -25,7 +25,3 @@ def test_get_active_skills_with_empty_list() -> None:
     result = get_active_skills(skills)
 
     assert result == []
-
-
-def test_ci_failure_demonstration() -> None:
-    assert False, "Intentional failure to demonstrate pull request CI"
